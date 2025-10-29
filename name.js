@@ -33,6 +33,7 @@ function firstLogin() {
     contentContainer.appendChild(label);
 
     inputElement = document.createElement("input");
+    inputElement.classList="user-input-text";
     inputElement.type = "text";
     inputElement.placeholder = "Enter your name.. or leave as buddy";
     contentContainer.appendChild(inputElement);
