@@ -30,6 +30,7 @@ function firstLogin() {
     contentContainer.innerHTML = '';
     const label = document.createElement("p");
     label.textContent = "Hey there! What should we call you?";
+    label.classList.add("form-label");
     contentContainer.appendChild(label);
 
     inputElement = document.createElement("input");
