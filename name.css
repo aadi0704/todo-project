@@ -1,0 +1,56 @@
+:root{
+    --studyplan-container:#ffffff;
+    --text-color:#121212;
+    --features-color:#1a1a1a;
+    --theme-color:#0d6efd;
+}
+body.dark-mode{
+    --text-color:#ffffff;
+    --features-color:#f0ffff;
+    --studyplan-container:#e0e0e0;
+    --theme-color:#ffca2c;
+}
+.form-label { 
+    color:var(--text-color);
+    font-size: clamp(1rem ,2vw,1.3rem); 
+    font-family:cursive; 
+    margin-bottom: 8px; 
+    font-weight: 600;
+    margin-top:8px;
+
+ }
+.bg-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+.name-container{
+    display :flex;
+    flex-direction: column;
+    padding:20px;
+}
+.tips{
+    color:var(--text-color);
+    font-family: cursive;
+    font-size:clamp(0.8rem,1.5vw,1.2rem);
+    font-weight:bold;
+    margin-top:10px;
+}
+.tip-text{
+    margin-bottom:10px;
+    color: #dc4354;
+}
+.logo{
+    color:var(--theme-color);
+}
+.change-name-to {
+     font-size: clamp(1rem ,2vw,1.3rem); 
+     font-weight: 500;
+      color: var(--text-color);
+     font-family: cursive;
+    }
+.name{
+    color:var(--theme-color);
+}

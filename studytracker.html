@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>バズム Study Tracker</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="studytracker.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+    <div class="bg-container pb-5">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg custom-body pb-2 pt-2">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">バズム</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link" href="todolist.html">To-Do List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="notes.html">Notes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="studytracker.html">Study Tracker</a>
+        </li>
+
+        <!-- ✅ Fixed Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            More
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#" onclick="askInput(); return false;">Change Name</a></li>
+            <li><a class="dropdown-item" href="help&guide.html">Help & guide</a></li>
+            <li><a class="dropdown-item" href="about.html">About</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" id="themeToggle" href="#">🌙 Dark Mode</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+        <!-- Study Planner Input -->
+        <div class="study-tracker-container pt-5">
+            <div class="container">
+                <h1 class="text-center mb-5 fw-bold fade-in-up main-heading">
+                    <i class="bi bi-book-half me-2 text-primary"></i>
+                    Study Planner & Tracker
+                </h1>
+
+                <div class="add-card-container containers mb-5 p-4 fade-in-up container-dark">
+                    <h2 class="sub-head mb-4 text-center"><i class="bi bi-calendar-event me-2 text-primary"></i>Study Planner</h2>
+                    <div class="planner-content">
+                        <div class="row">
+                            <div class="col-md-4 d-none d-md-block d-flex justify-content-center">
+                                <img src="studyplanner.png" class="img-size w-100 mt-3"/>
+                            </div>
+                            <div class="col-md-8">
+                                <div>
+                                    <label for="studySubject" class="form-label">Subject:</label>
+                                    <input type="text" id="studySubject" class="user-input-text" placeholder="Enter subject"/>
+                                </div>
+                                <div>
+                                    <label for="studyHours" class="form-label">Planned Study Hours:</label>
+                                    <input type="number" id="studyHours" class="user-input-text" placeholder="Enter hours"/>
+                                </div>
+                                <div>
+                                    <label for="studyDateTime" class="form-label">Date & Time:</label>
+                                    <input type="datetime-local" id="studyDateTime" class="user-input-text"/>
+                                </div>
+                                <div class="mt-3">
+                                    <button class="btn btn-primary" id="addStudyPlanButton">Add Study Plan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Study Plans Display -->
+                <div class="planner-display-session mt-4 mb-5 containers p-4 fade-in-up container-dark">
+                    <h2 class="sub-head mb-4 text-center"><i class="bi bi-clipboard-check me-2 text-primary"></i>My Study Plans</h2>
+                    <div class="filter-container mb-3 d-flex justify-content-end align-items-center">
+                        <label for="statusFilter" class="filter-label me-2">Filter by Status:</label>
+                        <select id="statusFilter" class="form-select w-auto">
+                            <option value="all">All</option>
+                            <option value="pending" selected>Pending</option>
+                            <option value="done">Done</option>
+                            <option value="missed">Missed</option>
+                        </select>
+                        <a href="#" class="clear-data"><i class="fa-solid fa-trash-alt ps-4" id="clearAllData" title="clear all data"></i></a>
+                    </div>
+                    <div id="studyPlansContainer" class="study-plans-container"></div>
+                </div>
+
+                <!-- Performance Dashboard -->
+                <div class="performance-dashboard containers mb-4 p-4 rounded fade-in-up">
+                    <h2 class="sub-head mb-5 mt-3 text-center"><i class="bi bi-speedometer2 me-2 text-primary"></i>Performance Dashboard</h2>
+                    <div class="d-flex justify-content-around text-center flex-wrap mt-3">
+                        <div id="streakSection" class="fade-in-up"> 
+                            <i id="streakIcon" class="fa-solid fa-fire text-warning fs-3 mb-1"></i>
+                            <h4 id="streakCount" class="text-danger fw-bold mb-0">0</h4>
+                            <p class="mb-0 performance-features mt-2">Current Streak</p>
+                        </div>
+                        <div class="fade-in-up">
+                            <i class="fa-solid fa-circle-check text-success fs-3 mb-1"></i>
+                            <h4 id="completedSessions" class="text-success fw-bold mb-0">0</h4>
+                            <p class="mb-0 performance-features mt-2">Completed Sessions</p>
+                        </div>
+                        <div class="fade-in-up">
+                            <i class="fa-solid fa-clock text-primary fs-3 mb-1"></i>
+                            <h4 id="totalHours" class="text-primary fw-bold mb-0">0</h4>
+                            <p class="mb-0 performance-features mt-2">Total Study Hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day-to-Day Performance Table -->
+                <div class="containers daily-performance mb-4 mt-5 p-4 rounded fade-in-up">
+                    <h2 class="sub-head mb-5 mt-2 text-center"><i class="bi bi-graph-up me-2 text-primary"></i>Day-to-Day Performance</h2>
+                    <div id="dailyPerformanceContainer" class="table-responsive">
+                        <table class="table table-striped align-middle text-center">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th><i class="fa-regular fa-calendar-days me-1"></i> Date</th>
+                                    <th><i class="fa-solid fa-circle-check text-success me-1"></i> Completed</th>
+                                    <th><i class="fa-solid fa-circle-xmark text-danger me-1"></i> Missed</th>
+                                    <th><i class="fa-solid fa-clock text-primary me-1"></i> Total Hours</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dailyPerformanceTableBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button id="viewMoreButton" class="btn btn-outline-primary">View More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-dark text-center text-lg-start text-white mt-5">
+    <div class="text-center pt-3">&copy; 2025 <span class="footer-company-logo"> バズム </span>. All Rights Reserved. <span id="footerTime"></span></div>
+</footer>
+
+    <audio id="alertSound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+
+    <script src="studytracker.js"></script>
+    <script src="theme.js"></script>
+    <script src="name.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

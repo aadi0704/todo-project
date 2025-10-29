@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: bazumu-todo
+    env: static
+    buildCommand: ""
+    publishPath: /
+    autoDeploy: true
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache

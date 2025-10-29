@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バズム Notes</title>
+    <link rel="stylesheet" href="notes.css">
+    <link rel="stylesheet" href="theme.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+<div class="bg-container pb-5">
+    <nav class="navbar navbar-expand-lg custom-body pb-2 pt-2">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">バズム</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link" href="todolist.html">To-Do List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="notes.html">Notes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="studytracker.html">Study Tracker</a>
+        </li>
+
+        <!-- ✅ Fixed Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            More
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#" onclick="askInput(); return false;">Change Name</a></li>
+            <li><a class="dropdown-item" href="help&guide.html">Help & guide</a></li>
+            <li><a class="dropdown-item" href="about.html">About</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" id="themeToggle" href="#">🌙 Dark Mode</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="notes-container pt-5">
+        <div class="container">
+            <h1 class="text-center main-heading mb-4 fw-bold fade-in-up"><i class="bi bi-journal-text me-2 text-primary"></i>Notes</h1>
+            
+            <!-- Add Note Section -->
+            <div class="add-card-container containers mt-3 mb-5 p-3 pb-3 fade-in-up">
+                <div class="row">
+                    <div class="col-md-4 d-none d-md-block d-flex flex-column justify-content-center mt-3">
+                        <img src="note.png" class="w-100 rounded mt-10"/>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <h2 class="sub-head pt-4">Create Note</h2>
+                        <input type="text" id="noteTitleInput" class="user-input-text mb-3" placeholder="Note Title"/>
+                        <textarea id="noteContentInput" class="user-textarea" placeholder="Note Content" rows="7"></textarea>
+                        <button class="btn-style mt-3" id="addNoteButton">Add Note</button>  
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notes List -->
+            <div class="notes-my-notes-card containers mt-5 pb-3 pt-3 fade-in-up">
+                
+
+                <h2 class="sub-head text-center mt-3"><i class="bi bi-journal-text me-2 text-primary"></i>My Personal Notes</h2>
+                <div class="search-container">
+    <input type="text" id="noteSearchInput" class="form-control" placeholder="Search notes...">
+</div>
+
+                <ul class="notes-items-container" id="notesItemsContainer"></ul>
+            </div>
+
+            <div class="mt-5 mb-3 text-center fade-in-up">
+                    <em id="dailyTip" class="motivation-line">Summarize key ideas in your own words — it boosts memory retention.</em>
+                </div>
+        </div>
+    </div>
+</div>
+<footer class="footer bg-dark text-center text-lg-start text-white mt-2">
+    <div class="text-center pt-3">&copy; 2025 <span class="footer-company-logo"> バズム </span>. All Rights Reserved. <span id="footerTime"></span></div>
+</footer>
+<script src="notes.js"></script>
+<script src="theme.js"></script>
+<script src="name.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
