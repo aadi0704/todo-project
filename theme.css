@@ -108,13 +108,14 @@ body {
 }
 .motivation-line{
   color:var(--text-color);
-  font-family: cursive;
+  font-family: 'Comic Neue', cursive;
   font-size:clamp(1rem,1.8vw,1.6rem);
   font-weight:bold;
 }
 .details{
   font-size: clamp(1rem ,2vw,1.3rem); 
-  font-family:cursive;
+  font-family: 'Comic Neue', cursive;
+
   font-weight:600;
   text-align:center; 
   color:#dc3545; 
@@ -161,8 +162,8 @@ body {
     padding-bottom:10px; 
   }
 .footer-company-logo{ 
-  font-family:'Monoton',
-   cursive; font-size:clamp(1rem ,1.6vw,1.1rem);
+  font-family:'Monoton',cursive; 
+  font-size:clamp(1rem ,1.6vw,1.1rem);
     color:#ffc107; 
     font-weight:bold; }
 .footer-company-logo:hover{ 

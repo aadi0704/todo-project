@@ -12,7 +12,7 @@ body.dark-mode{
 .form-label { 
     color:var(--text-color);
     font-size: clamp(1rem ,2vw,1.3rem); 
-    font-family:cursive; 
+    font-family: 'Comic Neue', cursive;
     margin-bottom: 8px; 
     font-weight: 600;
     margin-top:8px;

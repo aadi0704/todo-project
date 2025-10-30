@@ -12,7 +12,7 @@ body.dark-mode{
 }
 .tips{
     color: #dc4354;
-    font-family: cursive;
+    font-family: 'Comic Neue', cursive;
     font-size:clamp(0.8rem,1.5vw,1.2rem);
     font-weight:400;
     margin-top:10px;
@@ -31,7 +31,8 @@ body.dark-mode{
 .form-label { 
     color:var(--text-color);
     font-size: clamp(1rem ,2vw,1.3rem); 
-    font-family:cursive; 
+    font-family: 'Comic Neue', cursive;
+
     margin-bottom: 8px; 
     font-weight: 600;
     margin-top:8px;

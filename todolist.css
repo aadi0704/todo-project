@@ -18,7 +18,7 @@ body.dark-mode{
 
 .checkbox-input{ width:20px; height:20px; margin-top:12px; margin-right:12px; }
 .checkbox-label{
-    width:88%; font-size:clamp(1rem ,2vw,1.3rem); font-family:cursive;
+    width:88%; font-size:clamp(1rem ,2vw,1.3rem); font-family: 'Comic Neue', cursive;
     word-wrap: break-word; overflow-wrap: break-word; white-space: normal;
 }
 
@@ -29,7 +29,7 @@ body.dark-mode{
     color:var(--text-color);
     width:100%;
      font-size:clamp(1rem ,2vw,1.3rem); 
-     font-family:cursive;
+     font-family: 'Comic Neue', cursive;
 }
 .progress-bar{ transition:width 0.4s ease; background-color:#0d6efd; height:20px; font-size:0.9rem; }
 .progress-container{ width:90%; margin:0 auto; }
