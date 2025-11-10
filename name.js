@@ -2,13 +2,12 @@ const continueBtn = document.getElementById('continueBtn');
 const contentContainer = document.getElementById('contentcontainer');
 const tip = document.getElementById('tip');
 
-let inputElement; // global
+let inputElement; 
 let nameList = JSON.parse(localStorage.getItem("nameList")) || {name: "buddy", opencount: 0};
 
-// Increment open count
 nameList.opencount = (nameList.opencount || 0) + 1;
 
-// Save updated open count immediately
+
 function updatenameLocalStorage(){
     localStorage.setItem("nameList", JSON.stringify(nameList));
 }

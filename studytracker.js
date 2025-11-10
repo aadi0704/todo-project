@@ -299,7 +299,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000);
     }
 
-    // ✅ Render all study plans
+    // Render all study plans
     function renderStudyPlans(filter = "all") {
         studyPlansContainer.innerHTML = "";
         let filteredPlans = studyPlansList;
@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", function() {
         filteredPlans.forEach((plan, index) => createAndAppendStudyPlan(plan, index));
     }
 
-    // ✅ Add new plan
+    // Add new plan
     filterSelect.addEventListener("change", () => renderStudyPlans(filterSelect.value));
     addStudyPlanButton.addEventListener("click", () => {
         const subject = studySubjectInput.value.trim();
@@ -362,12 +362,12 @@ document.addEventListener("DOMContentLoaded", function() {
         scheduleMissCheck(newPlan);
     });
 
-    // ✅ Initial renders
+    // Initial renders
     renderStudyPlans("pending");
     updateDashboard();
     renderDailyPerformance();
 
-    // ✅ Footer clock
+    // Footer clock
     function updateFooterTime() {
         const now = new Date();
         document.getElementById("footerTime").textContent = ` | ${now.toLocaleTimeString()}`;
